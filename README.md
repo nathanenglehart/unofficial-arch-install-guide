@@ -230,9 +230,11 @@ and log back in as your new user.
 
 Hopefully your installation is a success - *yay!!* Otherwise, I would recommend consulting the aforementioned arch wiki. 
 
-## Extras
+From here on out, parts of the installation guide are optional.
 
-From here on out, these parts of the installation guide are optional.
+## Graphics and Audio
+
+To install graphics and audio drivers, the below is a simple configuration I recommend.
 
 ### Desktop Environment and Window Manager 
 
@@ -292,6 +294,29 @@ For *standard* AMD graphics cards, install with:
 
 ```bash
 sudo pacman -S xf86-video-amdgpu vulkan-radeon libva-mesa-driver mesa-vdpau
+```
+
+## Extras
+
+Following installation and setting up graphics and audio, there are a number of programs/functionalities that users may want their system to perform. Below are some handy that I use regularly.
+
+### Syncing Photos from an iPhone
+
+After plugging your iPhone to your system, to access all photos and videos on the device:
+
+```bash
+sudo pacman -S ifuse
+idevicepair validate
+mkdir ~/iPhone
+ifuse ~/iPhone
+cd ~/iPhone/DCIM
+```
+
+To unmount the device:
+
+```bash
+fusermount -u ~/iPhone
+rmdir ~/iPhone
 ```
 
 ## References
